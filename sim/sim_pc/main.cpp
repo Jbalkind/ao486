@@ -12,14 +12,17 @@
 volatile shared_mem_t *shared_ptr = NULL;
 
 int load_file(const char *name, int byte_location) {
+    printf("%s\n", name);
     FILE *fp = fopen(name, "rb");
     if(fp == NULL) {
+        printf("No luck\n");
         return -1;
     }
     
     int int_ret = fseek(fp, 0, SEEK_END);
     if(int_ret != 0) {
         fclose(fp);
+        printf("No luck 2\n");
         return -2;
     }
     
@@ -29,6 +32,7 @@ int load_file(const char *name, int byte_location) {
     int_ret = fread((void *)&shared_ptr->mem.bytes[byte_location], size, 1, fp);
     if(int_ret != 1) {
         fclose(fp);
+        printf("No luck 3\n");
         return -3;
     }
     fclose(fp);
@@ -74,14 +78,14 @@ int main(int argc, char **argv) {
     }
     
     //load bios
-    int_ret = load_file("./../../sd/bios/bochs_legacy", 0xF0000);
+    int_ret = load_file("/Users/jbalkind/Downloads/ao486/sd/bios/bochs_legacy", 0xF0000);
     if(int_ret != 0) {
         perror("Can not load bios file");
         return -3;
     }
     
     //load vgabios
-    int_ret = load_file("./../../sd/vgabios/vgabios_lgpl", 0xC0000);
+    int_ret = load_file("/Users/jbalkind/Downloads/ao486/sd/vgabios/vgabios-lgpl", 0xC0000);
     if(int_ret != 0) {
         perror("Can not load bios file");
         return -3;
@@ -97,7 +101,6 @@ int main(int argc, char **argv) {
             break;
         }
     }  
-*/
     while(true) {
         if(shared_ptr->ao486.starting == STEP_REQ) {
             printf("Starting ao486.\n");
@@ -105,8 +108,8 @@ int main(int argc, char **argv) {
             break;
         }
     }
+*/
 
-/*
     while(true) {
         if(shared_ptr->bochsDevs_starting == STEP_REQ) {
             printf("Starting bochsDevs.\n");
@@ -114,7 +117,6 @@ int main(int argc, char **argv) {
             break;
         }
     }
-*/
     //--------------------------------------------------------------------------
     
     uint32 ctrl_io_read  = 0;

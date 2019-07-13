@@ -305,21 +305,21 @@ int main(int argc, char **argv) {
         */
         
         proceed_ps2(kb_index, kb_waiting, kb_wait_limit, kb_recv_byte, kb_is_recv, kb_clk_hold, kb_clk_hold_value, kb_dat_hold, kb_dat_hold_value, kb_send_count,
-            top->v__DOT__ps2_kbclk_ena && top->v__DOT__ps2_kbclk_out == 0 && kb_is_recv == false,
-            top->v__DOT__ps2_kbclk_ena && top->v__DOT__ps2_kbclk_out == 0,
-            top->v__DOT__ps2_kbclk_ena == 0,
-            top->v__DOT__ps2_kbdat_ena && top->v__DOT__ps2_kbdat_out == 0,
+            top->ps2__DOT__ps2_kbclk_ena && top->ps2__DOT__ps2_kbclk_out == 0 && kb_is_recv == false,
+            top->ps2__DOT__ps2_kbclk_ena && top->ps2__DOT__ps2_kbclk_out == 0,
+            top->ps2__DOT__ps2_kbclk_ena == 0,
+            top->ps2__DOT__ps2_kbdat_ena && top->ps2__DOT__ps2_kbdat_out == 0,
             kb_send[0],
-            top->v__DOT__ps2_kbdat_out,
+            top->ps2__DOT__ps2_kbdat_out,
             false);
         
         proceed_ps2(ms_index, ms_waiting, ms_wait_limit, ms_recv_byte, ms_is_recv, ms_clk_hold, ms_clk_hold_value, ms_dat_hold, ms_dat_hold_value, mouse_send_count,
-            top->v__DOT__ps2_mouseclk_ena && top->v__DOT__ps2_mouseclk_out == 0 && ms_is_recv == false,
-            top->v__DOT__ps2_mouseclk_ena && top->v__DOT__ps2_mouseclk_out == 0,
-            top->v__DOT__ps2_mouseclk_ena == 0,
-            top->v__DOT__ps2_mousedat_ena && top->v__DOT__ps2_mousedat_out == 0,
+            top->ps2__DOT__ps2_mouseclk_ena && top->ps2__DOT__ps2_mouseclk_out == 0 && ms_is_recv == false,
+            top->ps2__DOT__ps2_mouseclk_ena && top->ps2__DOT__ps2_mouseclk_out == 0,
+            top->ps2__DOT__ps2_mouseclk_ena == 0,
+            top->ps2__DOT__ps2_mousedat_ena && top->ps2__DOT__ps2_mousedat_out == 0,
             mouse_send[0],
-            top->v__DOT__ps2_mousedat_out,
+            top->ps2__DOT__ps2_mousedat_out,
             true);
         
         /*

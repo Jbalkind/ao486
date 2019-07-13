@@ -98,7 +98,7 @@ ao486 ao486_inst(
     .clk                        (clk),                      //input
     .rst_n                      (rst_n),                    //input
     
-    .rst_internal_n             (rst_n),                    //input
+//    .rst_internal_n             (rst_n),                    //input
     
     //--------------------------------------------------------------------------
     .interrupt_do               (interrupt_do),             //input
@@ -128,29 +128,29 @@ ao486 ao486_inst(
     .avalon_io_write            (avalon_io_write),          //output
     .avalon_io_writedata        (avalon_io_writedata),      //output [31:0]
     
-    .avalon_io_waitrequest      (avalon_io_waitrequest),    //input
+    .avalon_io_waitrequest      (avalon_io_waitrequest)     //input
     
     //-------------------------------------------------------------------------- debug
-    .SW                         (SW),                       //input [17:0]
-    .tb_finish_instr (tb_finish_instr),
-
-    .dbg_io_address     (dbg_io_address),
-    .dbg_io_byteenable  (dbg_io_byteenable),
-    .dbg_io_write       (dbg_io_write),
-    .dbg_io_read        (dbg_io_read),
-    .dbg_io_data        (dbg_io_data),
-    
-    .dbg_int_vector     (dbg_int_vector),
-    .dbg_int            (dbg_int),
-    
-    .dbg_exc_vector     (dbg_exc_vector),
-    .dbg_exc            (dbg_exc),
-    
-    .dbg_mem_address    (dbg_mem_address),
-    .dbg_mem_byteenable (dbg_mem_byteenable),
-    .dbg_mem_write      (dbg_mem_write),
-    .dbg_mem_read       (dbg_mem_read),
-    .dbg_mem_data       (dbg_mem_data)
+//    .SW                         (SW),                       //input [17:0]
+//    .tb_finish_instr (tb_finish_instr),
+//
+//    .dbg_io_address     (dbg_io_address),
+//    .dbg_io_byteenable  (dbg_io_byteenable),
+//    .dbg_io_write       (dbg_io_write),
+//    .dbg_io_read        (dbg_io_read),
+//    .dbg_io_data        (dbg_io_data),
+//    
+//    .dbg_int_vector     (dbg_int_vector),
+//    .dbg_int            (dbg_int),
+//    
+//    .dbg_exc_vector     (dbg_exc_vector),
+//    .dbg_exc            (dbg_exc),
+//    
+//    .dbg_mem_address    (dbg_mem_address),
+//    .dbg_mem_byteenable (dbg_mem_byteenable),
+//    .dbg_mem_write      (dbg_mem_write),
+//    .dbg_mem_read       (dbg_mem_read),
+//    .dbg_mem_data       (dbg_mem_data)
 );
 
 //------------------------------------------------------------------------------
